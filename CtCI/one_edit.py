@@ -1,5 +1,7 @@
 # Function to check if the levenshtein distance is equal or less than one. For shure not
 # the best implementation. I still have to discover a more elegant and scalable way (for two_edit, three_edit etc).
+# My error, according to the book's solution, was not the scalability but the fact that I merge the two cases
+# (raplacement[len(str1) == len(str2)] and insertion/deletion[len(str1) != len(str2)]) in one solution. 
 def is_one_edit(str1, str2):
     if abs(len(str1) - len(str2)) > 1:
         return False
