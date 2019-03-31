@@ -5,20 +5,18 @@ def is_permutation(s1, s2):
     if len(s1) == 0:
         return True
 
-    i = 1
-    xor1 = ord(s1[0])
-    xor2 = ord(s2[0])
-    # This only works because the two strings have to have the same size
-    while i < len(s1):
-        xor1 = xor1 ^ ord(s1[i])
-        xor2 = xor2 ^ ord(s2[i])
-        i += 1
+    checker = [0] * 256  # Considring the extended ASCII table
 
-    if xor1 == xor2:
-        return True
-    else:
-        return False
+    for c in s1:
+        checker[ord(c)] += 1
 
+    for c in s2:
+        if checker[ord(c)] == 0:
+            return False
+        
+        checker[ord(c)] -= 1
+
+    return True
 
 def permute(a, l, r, result): 
     if l==r: 
