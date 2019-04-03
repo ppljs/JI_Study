@@ -46,6 +46,6 @@ if __name__ == '__main__':
     print(ll2)
     node = get_intersection(ll2.head, ll1.head)
     if node is None:
-        print('None')
+        print('The lists do not have an intersection...')
     else:
         print(node.value)
