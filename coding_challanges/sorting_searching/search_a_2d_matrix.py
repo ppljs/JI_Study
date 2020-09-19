@@ -47,3 +47,23 @@ def bin_search(matrix, left, right, target, is_horizontal):
 
 def get_from_matrix(matrix, is_horizontal, fix, ind):
     return matrix[fix][ind] if is_horizontal else matrix[ind][fix]
+
+
+# =========================================================================================================
+# Why didn't I think of this :`(
+
+def searchMatrix(matrix, target):
+    if not matrix or not matrix[0]:
+        return False
+
+    max_i, max_j = len(matrix), len(matrix[0])
+    i, j = max_i - 1, 0
+    while i >= 0 and j < max_j:
+        if matrix[i][j] == target:
+            return True
+        elif matrix[i][j] > target:
+            i -= 1
+        else:
+            j += 1
+
+    return False
