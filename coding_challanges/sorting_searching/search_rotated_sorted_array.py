@@ -8,23 +8,20 @@ If target is found in the array return its index, otherwise, return -1.
 """
 
 # PS: Try OO approach later.......
-
- def search(nums: List[int], target: int) -> int:
+def search(nums, target):
     if not nums:
         return - 1
-
+    
     real_start = find_real_start(arr=nums)
-
-
+    
     bin_search_args = None
     if real_start == -1:
         bin_search_args = (nums, 0, len(nums) - 1, target)
-
-    if is_target_on_right(real_start, target, nums):
+    elif is_target_on_right(real_start, target, nums):
         bin_search_args = (nums, real_start, len(nums) - 1, target) 
     else:
         bin_search_args = (nums, 0, real_start - 1, target)
-
+    
     return binary_search(*bin_search_args)
 
 
@@ -33,7 +30,7 @@ def find_real_start(arr):
 
 
 def binary_search(arr, left, right, target):
-    custom_binary_search(arr, normal_found_cond, normal_found_cond, left, right, target)
+    return custom_binary_search(arr, normal_found_cond, normal_right_cond, left, right, target)
 
         
 def custom_binary_search(arr, found_cond, right_cond, left, right, target):    
