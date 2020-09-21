@@ -22,7 +22,7 @@ def uniquePaths(m, n):
 
     # Math solution
     # return permutation_with_repetition(m - 1, n - 1)
-        
+
 
 def permutation_with_repetition(m, n):
     return factorial(m + n) // (factorial(m) * factorial(n))
