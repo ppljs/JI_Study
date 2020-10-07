@@ -86,8 +86,6 @@ class LruCache:
         node_ref = self._cache.appendleft(value)
         self._value_to_ref[value] = node_ref
 
-        
-
     def __repr__(self):
         return str(self._cache)
 
