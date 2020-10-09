@@ -7,14 +7,14 @@
 # that are missing. Do it in O(N) time and O(1) space
 
 def find_missing_two(arr):
-    sort_arr_from_1_to_N_inplace(arr)
-    return find_two_missing_values(arr)
+    _sort_arr_from_1_to_N_inplace(arr)
+    return _find_two_missing_values(arr)
 
 
 def _sort_arr_from_1_to_N_inplace(arr):
     i = 0
     while i < len(arr):
-        correct_index = get_index_from_value(arr[i])
+        correct_index = _get_index_from_value(arr[i])
         if correct_index == i or correct_index >= len(arr):
             i += 1
         else:
@@ -24,7 +24,7 @@ def _sort_arr_from_1_to_N_inplace(arr):
 def _find_two_missing_values(sorted_arr):
     two_missing_values = [len(sorted_arr) + 1, len(sorted_arr) + 2]
     for index, value in enumerate(sorted_arr):
-        expected_value = get_value_from_index(index)
+        expected_value = _get_value_from_index(index)
         if value != expected_value:
             if value == two_missing_values[0]:
                 two_missing_values[0] = expected_value
