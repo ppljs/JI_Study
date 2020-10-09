@@ -1,5 +1,11 @@
 # Cracking the Coding Interview
 
+# Problem: "Missing Two"
+
+# Example:
+# Given an array of unique numbers from 1..N, return the two numbers
+# that are missing. Do it in O(N) time and O(1) space
+
 def find_missing_two(arr):
     sort_arr_from_1_to_N_inplace(arr)
     return find_two_missing_values(arr)
