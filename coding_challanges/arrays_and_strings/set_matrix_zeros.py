@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/set-matrix-zeroes/submissions/
+
 def setZeroes(matrix):
     if not matrix or not isinstance(matrix[0], list) or not matrix[0]:
         return
