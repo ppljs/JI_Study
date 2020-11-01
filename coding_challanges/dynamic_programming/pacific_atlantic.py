@@ -18,8 +18,6 @@ P_DIRECTIONS = [(0, -1), (-1, 0), (0, 1), (1, 0)]
 
 def pacificAtlantic(matrix):
     atlantic, pacific = find_pacific_atlantic(matrix)
-    print(atlantic[35][3], atlantic[35][4], atlantic[36][3], atlantic[35][2], atlantic[34][3])
-    print(pacific[35][3])
     result = []
     for i in range(len(matrix)):
         for j in range(len(matrix[0])):
@@ -54,8 +52,6 @@ def can_reach(matrix, reached, directions, i, j, prev, memory):
         if can_reach(matrix, reached, directions, i + di, j + dj, matrix[i][j], memory):
             memory[i][j] = CAN_REACH
             return True
-        if i == 35 and j == 3 and prev == 16:
-            print('a')
     
     memory[i][j] = CANT_REACH
     
